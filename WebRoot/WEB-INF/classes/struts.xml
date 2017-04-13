@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+ <!-- 
+	 <constant name="struts.devMode" value="true" />Develop Mode 开发模式   即改即实现 -->
+	 <package name="default" namespace="/" extends="struts-default">
+	 
+		<action name="GoLogin" class="com.action.GoLogin">
+			<result name="input">/Login.jsp</result>
+			<result name="success">/Index.jsp</result>
+		</action>
+		
+		
+		<action name="ClassManager" class="com.action.ClassManager">
+			<result name="success">/ClassManager.jsp</result>
+		</action>
+		
+		<action name="ClassAddSave" class="com.action.ClassAddSave">
+		</action>
+		<action name="ClassUpdate" class="com.action.ClassUpdate">
+			<result name="success">/ClassUpdate.jsp</result>
+		</action>
+		<action name="ClassUpdateSave" class="com.action.ClassUpdateSave">
+		</action>
+		<action name="ClassDel" class="com.action.ClassDel">
+			<result name="success" type="chain">ClassManager</result>
+		</action>
+		
+		<action name="ShowClassStudent" class="com.action.ShowClassStudent">
+		    <result name="success">/ShowClassStudent.jsp</result>
+		</action>
+		
+		<action name="StudentManager" class="com.action.StudentManager">
+			<result name="success">/StudentManager.jsp</result>
+		</action>
+		
+		<action name="StudentAdd" class="com.action.StudentAdd">
+		<!-- 添加学号选择班级时候 获取班级列表 -->
+			<result name="success">/StudentAdd.jsp</result>
+		</action>
+		<action name="StudentAddSave" class="com.action.StudentAddSave">
+		</action>
+		<action name="StudentBatchImport" class="com.action.StudentBatchImport">
+		</action>
+
+		<action name="StudentUpdate" class="com.action.StudentUpdate">
+			<result name="success">/StudentUpdate.jsp</result>
+		</action>
+		<action name="StudentUpdateSave" class="com.action.StudentUpdateSave">
+		</action>
+		<action name="StudentDel" class="com.action.StudentDel">
+			<result name="success" type="chain">StudentManager</result>
+		</action>
+		
+		
+		<action name="CourseManager" class="com.action.CourseManager">
+			<result name="success">/CourseManager.jsp</result>
+		</action>
+		<action name="CourseUpdate" class="com.action.CourseUpdate">
+		    <result name="success">/CourseUpdate.jsp</result>
+		</action>
+		<action name="CourseUpdateSave" class="com.action.CourseUpdateSave">
+		</action>
+		<action name="CourseAddSave" class="com.action.CourseAddSave">
+		</action>
+		<action name="CourseDel" class="com.action.CourseDel">
+		  <result name="success" type="chain">CourseManager</result>
+		  <!-- chain 用于把相关的几个action连接起来，共同完成一个功能。  -->
+		</action>
+		
+		
+		
+		<action name="ShowCourseStudent" class="com.action.ShowCourseStudent">
+		    <result name="success">/ShowCourseStudent.jsp</result>
+		</action>
+		<action name="SelectCourse" class="com.action.SelectCourse">
+			<result name="success">/X6412.jsp</result>
+		</action>
+		<action name="SelectCourseSeat" class="com.action.SelectCourseSeat">
+		</action>
+		<action name="SelectCourseResult" class="com.action.SelectCourseResult">
+			<result name="success">/SelectCourseResult.jsp</result>
+		</action>
+		<action name="SelectCourseDel" class="com.action.SelectCourseDel">
+		 <result name="success" type="chain">SelectCourseResult</result>
+		</action>
+		
+		
+		
+		
+		
+		
+		
+		<action name="PasswordUpdateSave" class="com.action.PasswordUpdateSave">
+			<result name="input">/PasswordUpdate.jsp</result>
+		</action>
+		<action name="Quit" class="com.action.Quit">
+			<result name="success">/Login.jsp</result>
+		</action>
+
+
+    </package>
+    <!-- Add packages here -->
+
+</struts>
